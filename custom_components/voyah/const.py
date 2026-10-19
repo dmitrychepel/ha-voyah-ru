@@ -34,7 +34,7 @@ SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
         state_class=SensorStateClass.MEASUREMENT,
     ),
     SensorEntityDescription(
-        key="remainsMileage",
+        key="remainsBatteryMileage",  # Исправлено под новый API
         translation_key="remains_mileage",
         native_unit_of_measurement=UnitOfLength.KILOMETERS,
         device_class=SensorDeviceClass.DISTANCE,
@@ -48,7 +48,7 @@ SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
         icon="mdi:gas-station",
     ),
     SensorEntityDescription(
-        key="remainsMileageFuel",
+        key="remainsFuelMileage",  # Исправлено под новый API
         translation_key="remains_mileage_fuel",
         native_unit_of_measurement=UnitOfLength.KILOMETERS,
         device_class=SensorDeviceClass.DISTANCE,
@@ -231,21 +231,6 @@ BINARY_SENSOR_DESCRIPTIONS: tuple[BinarySensorEntityDescription, ...] = (
     BinarySensorEntityDescription(
         key="seatHeatingDriverStatus",
         translation_key="seat_heating_driver",
-        device_class=BinarySensorDeviceClass.RUNNING,
-    ),
-    BinarySensorEntityDescription(
-        key="seatHeatingFPassStatus",
-        translation_key="seat_heating_front_passenger",
-        device_class=BinarySensorDeviceClass.RUNNING,
-    ),
-    BinarySensorEntityDescription(
-        key="seatHeatingRLPassStatus",
-        translation_key="seat_heating_rear_left",
-        device_class=BinarySensorDeviceClass.RUNNING,
-    ),
-    BinarySensorEntityDescription(
-        key="seatHeatingRRPassStatus",
-        translation_key="seat_heating_rear_right",
         device_class=BinarySensorDeviceClass.RUNNING,
     ),
 )
